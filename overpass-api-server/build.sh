@@ -8,7 +8,7 @@ mkdir -p overpass
 
 pushd "$BUILD_DIR"
 ./configure --disable-dependency-tracking --enable-lz4 --prefix="$(pwd)/../overpass"
-make -j 4
+make -j 2
 make install
 popd
 
