@@ -16,7 +16,7 @@ elif [[ $DB_UID -ne $PROC_UID ]]; then
   exit 0
 else
   cd /overpass
-  bin/dispatcher --osm-base --attic --db-dir=db/ &
+  bin/dispatcher --osm-base --db-dir=db/ &
 fi  
 
 shutdown()

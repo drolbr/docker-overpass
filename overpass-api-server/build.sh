@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-wget https://dev.overpass-api.de/releases/osm-3s_v0.7.57.tar.gz
+#wget https://dev.overpass-api.de/releases/osm-3s_v0.7.57.tar.gz
 gunzip <osm-3s_v0.7.57.tar.gz | tar x
 BUILD_DIR=$(gunzip <osm-3s_v0.7.57.tar.gz | tar t | head -n 1)
 
