@@ -7,4 +7,6 @@ FROM alpine
 RUN apk add libstdc++ expat lz4-dev bash
 COPY run.sh ./run.sh
 COPY --from=build /overpass /overpass
-CMD ["./run.sh"]
+ENV init_from_clone=""
+ENV overpass_areas=""
+ENTRYPOINT ["./run.sh"]
