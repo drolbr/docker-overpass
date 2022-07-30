@@ -1,8 +1,8 @@
 
 # Docker Container for the Overpass API
 
-This is a collection of Docker containers to run the [Overpass API](https://github.com/drolbr/Overpass-API),
-written by the maintainers of the Overpass API.
+This is a collection of Docker containers to run the Overpass API ([documentation](https://dev.overpass-api.de/overpass-doc/en/), [source code](https://github.com/drolbr/Overpass-API)),
+written by a maintainer of the Overpass API.
 
 ## Usage
 
@@ -25,15 +25,17 @@ To avoid accidential downloads, the download is only started if there is no file
 In a populated database, the file indicates the id from which the files have been replicated.
 Thus, its absence means that the existing data, if any, is dubious.
 
+There are also parameter values to download including the meta data (`meta`) or the full database history (`attic`).
+
 If you have already a Overpass database prepopulated, then you can start it directly:
 
     docker run -d --name overpass-server -v $DB_DIR:/overpass/db osm3s-server
     
-Areas need some extra computation step.
+Areas need some extra computation steps.
 Thus they must be activated by setting an environment variable with `-e overpass_areas=yes`.
 The setting can be combined with the clone setting.
 
-As next step, run the frontend container with `$DB_DIR` set to your database directory:
+As a next step, run the frontend container with `$DB_DIR` set to your database directory:
     
     docker run -d --name overpass-httpd -p 8080:80 -v $DB_DIR:/overpass/db osm3s-httpd
 
