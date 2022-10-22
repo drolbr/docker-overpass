@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-OVERPASS_VERSION=0.7.58
-
-wget https://dev.overpass-api.de/releases/osm-3s_v${OVERPASS_VERSION}.tar.gz
-gunzip <osm-3s_v${OVERPASS_VERSION}.tar.gz | tar x
-BUILD_DIR=$(gunzip <osm-3s_v${OVERPASS_VERSION}.tar.gz | tar t | head -n 1)
+wget https://dev.overpass-api.de/releases/osm-3s_latest.tar.gz
+gunzip <osm-3s_latest.tar.gz | tar x
+BUILD_DIR=$(gunzip <osm-3s_latest.tar.gz | tar t | head -n 1)
 
 mkdir -p overpass
 mv "$BUILD_DIR/html" overpass/
